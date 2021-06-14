@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                         color: Colors.grey)),
               )),
               buildLoginGoogleButton(mq),
-              buildSignUpButton(),
+              buildSignUpButton(context),
             ],
           ),
         ),
@@ -60,9 +60,9 @@ class LoginScreen extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: TextFormField(
         decoration: InputDecoration(
-          hintText: 'Name',
+          hintText: 'E-mail',
           prefixIcon: Icon(
-            Icons.person,
+            Icons.email_sharp,
             color: Colors.grey,
           ),
           focusedBorder: UnderlineInputBorder(
@@ -110,12 +110,12 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget buildSignUpButton() {
+  Widget buildSignUpButton(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text('Don\'t have an account?'),
-        TextButton(onPressed: () {}, child: Text('Sign Up'))
+        TextButton(onPressed: () {Navigator.of(context).pushReplacementNamed('./sign-up-screen');}, child: Text('Sign Up'))
       ],
     );
   }
@@ -128,12 +128,19 @@ class LoginScreen extends StatelessWidget {
           child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
+                primary: Colors.grey,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  Container(
+                    height: 40,
+                    width: 50,
+
+                    child: Image.asset('assets/images/googlelogo.png'),
+                  ),
                   Text(
                     'Log in with Google',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
