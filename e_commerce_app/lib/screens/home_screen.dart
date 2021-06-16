@@ -1,7 +1,5 @@
 import 'package:e_commerce_app/data/data.dart';
-
 import 'package:e_commerce_app/widgets/constant.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,8 +39,10 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(15),topLeft: Radius.circular(15)),
+                color: Colors.grey[100],
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15)),
               ),
               child: Column(
                 children: [
