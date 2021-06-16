@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
+import 'package:e_commerce_app/screens/tabs_screen.dart';
 import 'package:e_commerce_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:HomeScreen(),
+      home:TabScreen(),
 
       routes: {
         './welcome-screen': (ctx)=> WelcomeScreen(),

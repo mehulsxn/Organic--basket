@@ -135,7 +135,11 @@ class SignupScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text('Already have an account?'),
-        TextButton(onPressed: () {Navigator.of(context).pushReplacementNamed('./login-screen');}, child: Text('Sign in'))
+        TextButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('./login-screen');
+            },
+            child: Text('Sign in'))
       ],
     );
   }
