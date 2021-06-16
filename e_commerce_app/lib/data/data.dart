@@ -10,27 +10,19 @@ class Data {
     CategoryItem(),
     CategoryItem(),
     CategoryItem(),
-
   ];
   static final offers = [
-
-  Offers(),
     Offers(),
     Offers(),
     Offers(),
     Offers(),
-
-
+    Offers(),
   ];
   static final popularDeals = [
-   Popular(),
     Popular(),
     Popular(),
     Popular(),
     Popular(),
-
-
-
+    Popular(),
   ];
-
 }
