@@ -36,7 +36,7 @@ class CategoriesScreen extends StatelessWidget {
                       crossAxisCount: 3,
                       mainAxisSpacing: 20,
                       childAspectRatio: 0.8),
-                  itemBuilder: (ctx, index) => CategoryItem(title: Data.categories[index].title,),
+                  itemBuilder: (ctx, index) => CategoryItem(title: Data.categories[index].title,image: Data.categories[index].image),
                   itemCount: Data.categories.length,
                 ),
               ),

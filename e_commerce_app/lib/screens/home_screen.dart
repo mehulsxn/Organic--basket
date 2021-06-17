@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: Data.categories.length,
-              itemBuilder: (ctx, index) => CategoryItem(title: Data.categories[index].title,),
+              itemBuilder: (ctx, index) => CategoryItem(title: Data.categories[index].title,image: Data.categories[index].image,),
             ),
           ),
         ],
