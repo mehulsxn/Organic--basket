@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/data/data.dart';
+import 'package:e_commerce_app/widgets/cateogry_item.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  buildCategoriesContainer(mq),
+                  buildCategoriesContainer(mq,context),
                   SizedBox(
                     height: 15,
                   ),
@@ -85,7 +86,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget buildCategoriesContainer(Size mq) {
+  Widget buildCategoriesContainer(Size mq,BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16),
       height: mq.height * 0.29,
@@ -101,7 +102,9 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed('./categories-screen');
+                },
                 child: Text(
                   'See all',
                   style: TextStyle(fontSize: 20, color: KPrimaryColor),
@@ -118,7 +121,7 @@ class HomeScreen extends StatelessWidget {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: Data.categories.length,
-              itemBuilder: (ctx, index) => Data.categories[index],
+              itemBuilder: (ctx, index) => CategoryItem(title: Data.categories[index].title,),
             ),
           ),
         ],

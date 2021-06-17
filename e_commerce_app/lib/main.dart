@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/categories_screen.dart';
 import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         './welcome-screen': (ctx) => WelcomeScreen(),
         './login-screen': (ctx) => LoginScreen(),
         './sign-up-screen': (ctx) => SignupScreen(),
+        './categories-screen': (ctx) => CategoriesScreen(),
       },
     );
   }
