@@ -1,19 +1,18 @@
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 
-class Products extends StatelessWidget{
+class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context).size;
     return Container(
       height: mq.height * 0.2,
-
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: mq.height * 0.18,
-            width: mq.height,
+            width: mq.width,
             child: Image.network(
               'https://png.pngtree.com/png-clipart/20201226/ourmid/pngtree-delicious-fresh-strawberry-png-image_2645827.jpg',
               fit: BoxFit.cover,
@@ -23,8 +22,7 @@ class Products extends StatelessWidget{
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: Text(
               'Strawberry(1 KG)',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),
           Text(
@@ -50,9 +48,12 @@ class Products extends StatelessWidget{
                     width: 45,
                     decoration: BoxDecoration(
                         color: KPrimaryColor,
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(20))
+                        borderRadius:
+                            BorderRadius.only(topLeft: Radius.circular(20))),
+                    child: Icon(
+                      Icons.add_shopping_cart,
+                      color: Colors.white,
                     ),
-                    child: Icon(Icons.add_shopping_cart,color: Colors.white,),
                   ),
                 ),
               ],

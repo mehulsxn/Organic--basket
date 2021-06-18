@@ -22,7 +22,6 @@ class CategoriesItemScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-
               height: 10,
             ),
             Container(
@@ -50,9 +49,6 @@ class CategoriesItemScreen extends StatelessWidget {
                   itemCount: 5,
                 ),
               ),
-            ),
-            SizedBox(
-              height: mq.height*0.2,
             ),
           ],
         ),
