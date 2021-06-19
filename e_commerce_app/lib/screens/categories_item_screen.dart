@@ -40,6 +40,7 @@ class CategoriesItemScreen extends StatelessWidget {
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30))),
                 child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 20,
