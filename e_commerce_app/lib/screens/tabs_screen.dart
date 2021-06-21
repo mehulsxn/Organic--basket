@@ -15,8 +15,9 @@ class _TabScreenState extends State<TabScreen> {
   List<Widget> screens = [
     HomeScreen(),
     OrderScreen(),
-    AccountScreen(),
     CartScreen(),
+    AccountScreen(),
+
   ];
 
   int pageIndex = 0;
@@ -43,20 +44,20 @@ class _TabScreenState extends State<TabScreen> {
                   : Icon(Icons.category_outlined, size: 30),
               label: 'Home'),
           BottomNavigationBarItem(
-              icon: pageIndex == 0
+              icon: pageIndex == 1
                   ? Icon(Icons.house, size: 30)
                   : Icon(Icons.house_outlined, size: 30),
-              label: 'Home'),
+              label: 'Order'),
           BottomNavigationBarItem(
-              icon: pageIndex == 0
+              icon: pageIndex == 2
                   ? Icon(Icons.shopping_cart, size: 30)
                   : Icon(Icons.shopping_cart_outlined, size: 30),
-              label: 'Home'),
+              label: 'Cart'),
           BottomNavigationBarItem(
-              icon: pageIndex == 0
+              icon: pageIndex == 3
                   ? Icon(Icons.person, size: 30)
                   : Icon(Icons.person_outline, size: 30),
-              label: 'Home'),
+              label: 'Account'),
         ],
       ),
     );
