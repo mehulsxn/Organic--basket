@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/cart.dart';
 import 'package:e_commerce_app/core/store.dart';
 import 'package:e_commerce_app/widgets/cart_rows.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
@@ -43,12 +44,12 @@ class CartScreen extends StatelessWidget {
                     color: Colors.grey[100],
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: store.allProductsInCart.length == 0
+                  child: store.cart.allProductsInCart.length == 0
                       ? Text('No items added')
                       : ListView.builder(
-                          itemCount: store.allProductsInCart.length,
+                          itemCount: store.cart.allProductsInCart.length,
                           itemBuilder: (ctx, index) => CartRows(
-                            productModel: store.allProductsInCart[index],
+                            productModel: store.cart.allProductsInCart[index],
                           ),
                         ),
                 ),
@@ -64,7 +65,7 @@ class CartScreen extends StatelessWidget {
                     mutations: {AddProduct,RemoveProduct},
                     builder: (context,_,__) =>
                         Text(
-                          'Total: ${store.totalPrice}',
+                          'Total: ${store.cart.totalPrice}',
                           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
                         ),
                   ),

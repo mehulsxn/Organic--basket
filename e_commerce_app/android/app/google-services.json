@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090529231022",
+    "project_id": "organic-basket-fe826",
+    "storage_bucket": "organic-basket-fe826.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090529231022:android:e49e69e8e72aa8db036d3f",
+        "android_client_info": {
+          "package_name": "com.mehul.e_commerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090529231022-a8bovlpk3o5kmq3irnu584p4vi1lorlk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAimHfSphJ0wCX9sa0SD7McbhEz5nxEy28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090529231022-a8bovlpk3o5kmq3irnu584p4vi1lorlk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

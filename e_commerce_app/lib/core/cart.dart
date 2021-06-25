@@ -16,12 +16,12 @@ class AddProduct extends VxMutation<MyStore> {
 
   @override
   perform() {
-    store.allProductsInCart.add(product);
+    store.cart.allProductsInCart.add(product);
     int sum=0;
-    store.allProductsInCart.forEach((element) {
+    store.cart.allProductsInCart.forEach((element) {
       sum = sum + element.itemPrice;
     });
-    store.totalPrice= sum;
+    store.cart.totalPrice= sum;
   }
 }
 
@@ -32,11 +32,11 @@ class RemoveProduct extends VxMutation<MyStore> {
 
   @override
   perform() {
-    store.allProductsInCart.remove(product);
+    store.cart.allProductsInCart.remove(product);
     int sum=0;
-    store.allProductsInCart.forEach((element) {
+    store.cart.allProductsInCart.forEach((element) {
       sum = sum + element.itemPrice;
     });
-    store.totalPrice= sum;
+    store.cart.totalPrice= sum;
   }
 }
