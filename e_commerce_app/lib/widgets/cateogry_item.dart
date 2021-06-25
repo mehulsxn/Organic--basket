@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/models/product_model.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +7,9 @@ import '../screens/categories_item_screen.dart';
 class CategoryItem extends StatelessWidget {
   final String title;
   final String image;
+  final List<ProductModel> productModel;
 
-  CategoryItem({required this.image, required this.title});
+  CategoryItem({this.image,this.title,this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class CategoryItem extends StatelessWidget {
           MaterialPageRoute(
               builder: (ctx) => CategoriesItemScreen(
                     title: title,
+                productModel: productModel,
                   )),
         );
       },

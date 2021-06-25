@@ -1,7 +1,10 @@
+import 'package:e_commerce_app/models/product_model.dart';
+
 class Category {
   final int id;
   final String title;
   final String image;
+  final List<ProductModel> productModels;
 
-  Category({required this.title, required this.id, required this.image});
+  Category({ this.title,  this.id, this.image,this.productModels});
 }

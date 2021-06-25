@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/widgets/constant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartRows extends StatelessWidget {
@@ -7,8 +8,7 @@ class CartRows extends StatelessWidget {
     final mq = MediaQuery.of(context).size;
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
+
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
@@ -20,27 +20,34 @@ class CartRows extends StatelessWidget {
                 'https://pbs.twimg.com/media/C78ez7TXgAAc8xt.jpg'),
           ),
         ),
+        SizedBox(
+          width: 25,
+        ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 20,
-            ),
+
             Text(
               'Apple',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: 20,
+              height: 4,
             ),
-            Text('\$17.00'),
+            Text('\$17.00/Kg',style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
+            SizedBox(
+              height: 8,
+            ),
+            Text('\$17.00 ',style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,color: KPrimaryColor),),
           ],
         ),
+        Spacer(),
         Column(
           children: [
             SizedBox(
               height: 10,
             ),
-            Icon(Icons.plus_one),
+            Icon(CupertinoIcons.plus),
             SizedBox(
               height: 15,
             ),
@@ -55,7 +62,7 @@ class CartRows extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Icon(Icons.exposure_minus_1),
+            Icon(CupertinoIcons.minus),
           ],
         ),
       ],

@@ -13,7 +13,6 @@ class CartScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: KPrimaryColor,
         title: Text('Cart'),
-        
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -23,48 +22,25 @@ class CartScreen extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(22),
-              height: mq.height*0.6 ,
+              height: mq.height * 0.6,
               decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.only(topRight: Radius.circular(30),topLeft:Radius.circular(30) )
-              ),
-              child: SingleChildScrollView(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Column(
-                    children: [
-                      CartRows(),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CartRows(),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CartRows(),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CartRows(),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CartRows(),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CartRows(),
-                    ],
-                  ),
-
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30))),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (ctx, index) => CartRows(),
                 ),
               ),
             ),
             Container(
-              height: mq.height*0.2,
+              height: mq.height * 0.2,
               color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -73,14 +49,16 @@ class CartScreen extends StatelessWidget {
                     'Total: \$28.60',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
                   ),
-                  ElevatedButton(
-
-                      style: ElevatedButton.styleFrom(primary: KPrimaryColor),
-                      onPressed: () {},
-                      child: Text(
-                        'Checkout >',
-                        style: TextStyle(fontSize: 18),
-                      ))
+                  SizedBox(
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: KPrimaryColor),
+                        onPressed: () {},
+                        child: Text(
+                          'Checkout >',
+                          style: TextStyle(fontSize: 18),
+                        )),
+                  )
                 ],
               ),
             ),
