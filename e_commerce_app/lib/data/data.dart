@@ -12,11 +12,11 @@ class Data {
         image:
             'https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?k=6&m=589415708&s=612x612&w=0&h=yk6a8hZI3HnGuPgCkJqWjqzmfbGqy9bucx1ZUXkXwA8=',
         productModels: [
-          ProductModel(title: 'Mango'),
-          ProductModel(title: 'papaya'),
-          ProductModel(title: 'grapes'),
-          ProductModel(title: 'apple'),
-          ProductModel(title: 'orange')
+          ProductModel(title: 'Mango',itemPrice: 10),
+          ProductModel(title: 'papaya',itemPrice: 10),
+          ProductModel(title: 'grapes',itemPrice: 10),
+          ProductModel(title: 'apple',itemPrice: 10),
+          ProductModel(title: 'orange',itemPrice: 10)
         ]),
     Category(
         title: 'fruits',

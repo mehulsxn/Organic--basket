@@ -1,11 +1,17 @@
+import 'package:e_commerce_app/core/store.dart';
 import 'package:e_commerce_app/widgets/cart_rows.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    MyStore store = VxState.store;
+
+
+
     final mq = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: KPrimaryColor,
@@ -23,19 +29,28 @@ class CartScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(22),
               height: mq.height * 0.6,
+              width: double.infinity,
               decoration: BoxDecoration(
                   color: Colors.grey[100],
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30))),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: ListView.builder(
-                  itemCount: 3,
-                  itemBuilder: (ctx, index) => CartRows(),
+              child: VxBuilder(
+                mutations: {RemoveProduct},
+                builder: (context,_,status)=>
+                 Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100],
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: store.allProductsInCart.length == 0
+                      ? Text('No items added')
+                      : ListView.builder(
+                          itemCount: store.allProductsInCart.length,
+                          itemBuilder: (ctx, index) => CartRows(
+                            productModel: store.allProductsInCart[index],
+                          ),
+                        ),
                 ),
               ),
             ),
@@ -45,9 +60,13 @@ class CartScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    'Total: \$28.60',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
+                  VxBuilder(
+                    mutations: {AddProduct,RemoveProduct},
+                    builder: (context,_,__) =>
+                        Text(
+                          'Total: ${store.totalPrice}',
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
+                        ),
                   ),
                   SizedBox(
                     height: 50,

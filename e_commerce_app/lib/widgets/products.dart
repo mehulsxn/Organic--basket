@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/store.dart';
 import 'package:e_commerce_app/models/product_model.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,9 @@ class Products extends StatelessWidget {
     color: KPrimaryColor),
     ),
     GestureDetector(
-    onTap: () {},
+    onTap: () {
+      AddProduct(productModel);
+    },
     child: Container(
     height: 50,
     width: 45,
