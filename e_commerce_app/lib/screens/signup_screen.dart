@@ -1,11 +1,42 @@
+import 'package:e_commerce_app/core/authentication.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
+
+  @override
+  _SignupScreenState createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+final _formKey = GlobalKey<FormState>();
+
+  String _email;
+
+  String _password;
+
+  String _name;
+
+  _save(){
+
+    if(_formKey.currentState.validate()){
+      _formKey.currentState.save();
+
+      Authentication.signUp(
+          context: context, email: _email, password: _password);
+    }
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context).size;
+    final mq = MediaQuery
+        .of(context)
+        .size;
+
+
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -32,24 +63,31 @@ class SignupScreen extends StatelessWidget {
               SizedBox(
                 height: mq.height * 0.05,
               ),
-              buildEmailField(),
-              buildEmailfField(),
-              buildPasswordField('Password'),
+              Form(
+                child: Column(
+                  children: [
+                    buildNameField(),
+                    buildEmailfField(),
+                    buildPasswordField('Password'),
+                  ],
+                ),
+              ),
+
               SizedBox(
                 height: mq.height * 0.05,
               ),
-              buildLoginButton(mq),
+              buildSignUpButton(mq, context),
               Center(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('OR',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.grey)),
-              )),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('OR',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.grey)),
+                  )),
               buildLoginGoogleButton(mq),
-              buildSignUpButton(context),
+              buildLoginButton(context),
             ],
           ),
         ),
@@ -57,7 +95,7 @@ class SignupScreen extends StatelessWidget {
     );
   }
 
-  Widget buildEmailField() {
+  Widget buildNameField() {
     return Container(
       padding: EdgeInsets.all(20),
       child: TextFormField(
@@ -71,6 +109,9 @@ class SignupScreen extends StatelessWidget {
             borderSide: BorderSide(color: Colors.black),
           ),
         ),
+        onSaved: (value) {
+          _name = value;
+        },
       ),
     );
   }
@@ -89,6 +130,9 @@ class SignupScreen extends StatelessWidget {
             borderSide: BorderSide(color: Colors.black),
           ),
         ),
+        onSaved: (value) {
+          _email = value;
+        },
       ),
     );
   }
@@ -108,19 +152,20 @@ class SignupScreen extends StatelessWidget {
             borderSide: BorderSide(color: Colors.black),
           ),
         ),
+        onSaved: (value) {
+          _password = value;
+        },
       ),
     );
   }
 
-  Widget buildLoginButton(Size mq) {
+  Widget buildSignUpButton(Size mq, BuildContext context) {
     return Center(
       child: SizedBox(
           height: mq.height * 0.07,
           width: mq.width * 0.8,
           child: ElevatedButton(
-              onPressed: () {
-
-              },
+              onPressed: _save,
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
@@ -132,7 +177,7 @@ class SignupScreen extends StatelessWidget {
     );
   }
 
-  Widget buildSignUpButton(BuildContext context) {
+  Widget buildLoginButton(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
