@@ -4,13 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatefulWidget {
-
   @override
   _SignupScreenState createState() => _SignupScreenState();
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   String _email;
 
@@ -18,24 +17,18 @@ final _formKey = GlobalKey<FormState>();
 
   String _name;
 
-  _save(){
-
-    if(_formKey.currentState.validate()){
+  _save() {
+    if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
 
       Authentication.signUp(
           context: context, email: _email, password: _password);
     }
-
-
   }
 
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery
-        .of(context)
-        .size;
-
+    final mq = MediaQuery.of(context).size;
 
     return Scaffold(
       body: Center(
@@ -72,20 +65,19 @@ final _formKey = GlobalKey<FormState>();
                   ],
                 ),
               ),
-
               SizedBox(
                 height: mq.height * 0.05,
               ),
               buildSignUpButton(mq, context),
               Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('OR',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.grey)),
-                  )),
+                padding: const EdgeInsets.all(8.0),
+                child: Text('OR',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.grey)),
+              )),
               buildLoginGoogleButton(mq),
               buildLoginButton(context),
             ],

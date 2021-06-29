@@ -40,4 +40,8 @@ class Authentication {
       print(error);
     }
   }
+
+  static Future <void> signOut()async{
+   await auth.signOut();
+  }
 }
