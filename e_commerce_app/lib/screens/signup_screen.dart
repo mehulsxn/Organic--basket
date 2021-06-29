@@ -22,7 +22,7 @@ class _SignupScreenState extends State<SignupScreen> {
       _formKey.currentState.save();
 
       Authentication.signUp(
-          context: context, email: _email, password: _password);
+          context: context, email: _email, password: _password, name: _name);
     }
   }
 
@@ -57,6 +57,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 height: mq.height * 0.05,
               ),
               Form(
+                key: _formKey,
                 child: Column(
                   children: [
                     buildNameField(),
