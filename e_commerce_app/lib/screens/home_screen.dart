@@ -170,6 +170,7 @@ class HomeScreen extends StatelessWidget {
             color: Colors.grey,
           ),
           Container(
+
             padding: EdgeInsets.only(top: 6),
             height: mq.height * 0.17,
             child: ListView.builder(
