@@ -147,7 +147,7 @@ class DescriptionScreen extends StatelessWidget {
             ),
             BottomNavigationBar(
               selectedItemColor: KPrimaryColor,
-              unselectedItemColor: Colors.grey,
+              unselectedItemColor: Colors.white,
               items: [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.attach_money_sharp), label: '\$17.00'),
