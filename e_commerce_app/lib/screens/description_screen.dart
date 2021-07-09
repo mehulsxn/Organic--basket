@@ -1,8 +1,14 @@
+import 'package:e_commerce_app/models/product_model.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionScreen extends StatelessWidget {
+
+  final ProductModel productModel;
+
+  DescriptionScreen({this.productModel});
+
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context).size;
@@ -21,8 +27,8 @@ class DescriptionScreen extends StatelessWidget {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                 ),
-                child: Image.network(
-                  'https://images.immediate.co.uk/production/volatile/sites/30/2013/06/Strawberries-in-a-bowl-e53b458-scaled.jpg?quality=90&resize=768%2C574',
+                child: Image.network(productModel.image,
+
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -42,7 +48,7 @@ class DescriptionScreen extends StatelessWidget {
                   SizedBox(
                     height: mq.height * 0.001,
                   ),
-                  Text('Strawberry',
+                  Text(productModel.title,
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                   SizedBox(
