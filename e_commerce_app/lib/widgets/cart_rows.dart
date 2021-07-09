@@ -23,7 +23,7 @@ class CartRows extends StatelessWidget {
             height: mq.height * 0.15,
             width: mq.width * 0.25,
             child: Image.network(
-                'https://pbs.twimg.com/media/C78ez7TXgAAc8xt.jpg'),
+                productModel.image),
           ),
         ),
         SizedBox(

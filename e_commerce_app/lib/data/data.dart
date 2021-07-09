@@ -12,11 +12,11 @@ class Data {
         image:
             'https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?k=6&m=589415708&s=612x612&w=0&h=yk6a8hZI3HnGuPgCkJqWjqzmfbGqy9bucx1ZUXkXwA8=',
         productModels: [
-          ProductModel(title: 'Mango',itemPrice: 10),
-          ProductModel(title: 'papaya',itemPrice: 10),
-          ProductModel(title: 'grapes',itemPrice: 10),
-          ProductModel(title: 'apple',itemPrice: 10),
-          ProductModel(title: 'orange',itemPrice: 10)
+          ProductModel(title: 'Onion',itemPrice: 10,image:'https://imagevars.gulfnews.com/2019/09/20/190920-onion-_16d4fa56edd_large.jpg' ),
+          ProductModel(title: 'Potato',itemPrice: 10,image: 'https://wallpapercave.com/wp/wp1885849.jpg'),
+          ProductModel(title: 'Cabbage',itemPrice: 10,image: 'https://wallpapercave.com/wp/wp4159429.jpg'),
+          ProductModel(title: 'Carrot',itemPrice: 10,image:'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2Fycm90fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80' ),
+          ProductModel(title: 'Capsicum',itemPrice: 10,image:'https://www.nicepng.com/png/detail/52-525615_green-bell-pepper-png-green-capsicum-png.png' ),
         ]),
     Category(
         title: 'fruits',
