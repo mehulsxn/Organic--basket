@@ -105,6 +105,12 @@ class _SignupScreenState extends State<SignupScreen> {
         onSaved: (value) {
           _name = value;
         },
+        // ignore: missing_return
+        validator: (_value) {
+          if (_value.isEmpty) {
+            return 'Please enter name';
+          }
+        },
       ),
     );
   }
@@ -126,6 +132,8 @@ class _SignupScreenState extends State<SignupScreen> {
         onSaved: (value) {
           _email = value;
         },
+
+
       ),
     );
   }
@@ -147,6 +155,15 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
         onSaved: (value) {
           _password = value;
+        },
+        // ignore: missing_return
+        validator: (value){
+          if(value.isEmpty){
+            return 'Please entre your value';
+          }
+          if(value.length<6){
+            return'password length should be of more than 5';
+          }
         },
       ),
     );

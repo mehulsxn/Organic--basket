@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/firebase_methods.dart';
+import 'package:e_commerce_app/core/store.dart';
 import 'package:e_commerce_app/screens/tabs_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,17 +12,21 @@ class Authentication {
   static Future<void> signUp(
       {BuildContext context, String email, String password,String name}) async {
     try {
+      ToggleLoading();
+      Future.delayed(Duration(seconds: 1));
       UserCredential userCredential = await auth.createUserWithEmailAndPassword(
           email: email, password: password);
 
       User user = userCredential.user;
 
       if (user != null) {
+        ToggleLoading();
         FirebaseMethods.saveUserToFirebase(uid: user.uid,name: name,email: email);
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (ctx) => TabScreen()));
       }
     } catch (error) {
+      ToggleLoading();
       var errorMessage = 'Failed: Please try again';
 
       if (error.toString().contains('ERROR_TOO_MANY_REQUESTS')) {
@@ -49,18 +54,21 @@ class Authentication {
   static Future<void> login(
       {BuildContext context, String email, String password}) async {
     try {
+      ToggleLoading();
+      Future.delayed(Duration(seconds: 1));
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email, password: password);
 
       User user = userCredential.user;
 
       if (user != null) {
-
+        ToggleLoading();
 
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (ctx) => TabScreen()));
       }
     } catch (error) {
+      ToggleLoading();
       var errorMessage = 'Failed! Try again Later';
       if (error.toString().contains('password is invalid')) {
         errorMessage = 'Opps! Wrong Password';
