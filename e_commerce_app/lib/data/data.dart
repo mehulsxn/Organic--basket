@@ -10,7 +10,7 @@ class Data {
         title: 'vegetables',
         id: 1,
         image:
-            'https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-picture-id589415708?k=6&m=589415708&s=612x612&w=0&h=yk6a8hZI3HnGuPgCkJqWjqzmfbGqy9bucx1ZUXkXwA8=',
+            'assets/images/vegetable.jpg',
         productModels: [
           ProductModel(
               title: 'Onion',
@@ -41,7 +41,7 @@ class Data {
         title: 'fruits',
         id: 2,
         image:
-            'https://www.hdwallpapersfreedownload.com/uploads/large/fruits/all-fruits-hd-wallpaper.jpg',
+            'assets/images/fruits.jpg',
         productModels: [
           ProductModel(
               title: 'Kiwi',
@@ -69,47 +69,47 @@ class Data {
         title: 'breads',
         id: 3,
         image:
-            'https://c4.wallpaperflare.com/wallpaper/681/930/507/bread-rye-bread-baked-goods-baguette-wallpaper-preview.jpg',
+            'assets/images/breads.jpg',
         productModels: [
           ProductModel(
               title: 'Kiwi',
               image: 'https://wallpaperaccess.com/full/1463500.jpg')
         ]),
     Category(
-        title: 'eggs',
+        title: 'Icecream',
         id: 4,
-        image: 'https://wallpaperaccess.com/full/1463500.jpg'),
+        image: 'assets/images/icecream.jpg'),
     Category(
         title: 'bakery',
         id: 5,
         image:
-            'https://hirasweets.com/wp-content/uploads/revslider/bakery/bakery-wallpaper-hd-1.jpg',
+            'assets/images/bakery.jpg',
         productModels: [ProductModel(title: 'Kiwi')]),
     Category(
-        title: 'milk',
+        title: 'milk & eggs',
         id: 6,
         image:
-            'https://previews.123rf.com/images/vasilyrosca/vasilyrosca1803/vasilyrosca180300140/97280587-milk-packet-isolated-on-white-background-vector-illustration-of-carton-pack-paper-box-design-for-dri.jpg',
+            'assets/images/milkeggs.jpg',
         productModels: [ProductModel(title: 'Kiwi')]),
     Category(
         title: 'meat',
         id: 7,
         image:
-            'https://i.pinimg.com/originals/ac/55/42/ac554280e95778bff52905db341ba5a3.jpg'),
+            'assets/images/meat.jpg'),
     Category(
         title: 'sea food',
         id: 8,
-        image: 'https://cdn.hipwallpaper.com/i/87/5/b7XuBM.jpg'),
+        image: 'assets/images/seafood.jpg'),
     Category(
         title: 'cake',
         id: 9,
         image:
-            'https://images.unsplash.com/photo-1559553156-2e97137af16f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'),
+            'assets/images/cake.jpg'),
     Category(
-        title: 'juice',
+        title: 'Soft Drink',
         id: 10,
         image:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz9Qa4ws4WUOsgjrz9i0pQBVHncrB7WvZp2A&usqp=CAU'),
+            'assets/images/coke.jpg'),
   ];
   static final offers = [
     Offers(),
