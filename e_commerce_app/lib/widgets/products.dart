@@ -32,7 +32,7 @@ productModel: productModel,
             Container(
               height: mq.height * 0.18,
               width: mq.width,
-              child: Image.network(
+              child: Image.asset(
                 productModel.image,
                 fit: BoxFit.cover,
               ),

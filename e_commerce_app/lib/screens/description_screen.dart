@@ -27,7 +27,7 @@ class DescriptionScreen extends StatelessWidget {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                 ),
-                child: Image.network(productModel.image,
+                child: Image.asset(productModel.image,
 
                   fit: BoxFit.fitWidth,
                 ),

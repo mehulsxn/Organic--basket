@@ -22,7 +22,7 @@ class CartRows extends StatelessWidget {
             color: Colors.white,
             height: mq.height * 0.15,
             width: mq.width * 0.25,
-            child: Image.network(
+            child: Image.asset(
                 productModel.image),
           ),
         ),
