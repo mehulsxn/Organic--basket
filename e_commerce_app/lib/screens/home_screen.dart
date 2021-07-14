@@ -156,7 +156,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Popular Deals',
+                'Popular Items',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               ),
               TextButton(

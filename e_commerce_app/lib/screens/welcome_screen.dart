@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/widgets/background_image.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -6,25 +7,32 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context).size;
 
-    return Scaffold(
-        body: Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: mq.height * 0.18,
-          ),
-          buildTitle(),
-          Spacer(),
-          buildButton(context, 'Sign up', mq),
-          SizedBox(
-            height: mq.height * 0.025,
-          ),
-          buildButton(context, 'Log in', mq),
-          Spacer(),
-        ],
-      ),
-    ));
+    return Stack(
+      children: [
+        BackgroundImage(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            
+            SizedBox(
+              height: mq.height * 0.18,
+            ),
+            buildTitle(),
+            Spacer(),
+            buildButton(context, 'Sign up', mq),
+            SizedBox(
+              height: mq.height * 0.025,
+            ),
+            buildButton(context, 'Log in', mq),
+            Spacer(),
+          ],
+        ),
+      )),
+    ]
+    );
   }
 
   Widget buildTitle() {
