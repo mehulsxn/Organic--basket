@@ -91,62 +91,62 @@ class Data {
         id: 5,
         image: 'assets/images/bakery.jpg',
         productModels: [
-          ProductModel(title: 'Cookies',itemPrice: 10,image: ),
-          ProductModel(title: 'Pastries',itemPrice: 10,image: ),
-          ProductModel(title: 'Chocolates',itemPrice: 10,image: ),
+          ProductModel(title: 'Cookies',itemPrice: 10,),
+          ProductModel(title: 'Pastries',itemPrice: 10,),
+          ProductModel(title: 'Chocolates',itemPrice: 10, ),
         ]),
     Category(
         title: 'milk & eggs',
         id: 6,
         image: 'assets/images/milkeggs.jpg',
         productModels: [
-          ProductModel(title: 'Toned Milk',itemPrice: 10,image: ),
-          ProductModel(title: 'Eggs',itemPrice: 10,image: ),
-          ProductModel(title: 'Butter Milk',itemPrice: 10,image: ),
+          ProductModel(title: 'Toned Milk',itemPrice: 10, ),
+          ProductModel(title: 'Eggs',itemPrice: 10, ),
+          ProductModel(title: 'Butter Milk',itemPrice: 10, ),
         ]),
     Category(
         title: 'meat',
         id: 7,
         image: 'assets/images/meat.jpg',
         productModels: [
-          ProductModel(title: 'Red Meat',itemPrice: 10,image: ),
-          ProductModel(title: 'Chicken',itemPrice: 10,image: ),
-          ProductModel(title: 'Boneless Chicken',itemPrice: 10,image: ),
+          ProductModel(title: 'Red Meat',itemPrice: 10),
+          ProductModel(title: 'Chicken',itemPrice: 10),
+          ProductModel(title: 'Boneless Chicken',itemPrice: 10 ),
         ]),
     Category(
         title: 'sea food',
         id: 8,
         image: 'assets/images/seafood.jpg',
         productModels: [
-          ProductModel(title: 'fish',itemPrice: 10,image:),
-          ProductModel(title: 'lobster',itemPrice: 10,image:),
-          ProductModel(title: 'crabs',itemPrice: 10,image:),
+          ProductModel(title: 'fish',itemPrice: 10,),
+          ProductModel(title: 'lobster',itemPrice: 10,),
+          ProductModel(title: 'crabs',itemPrice: 10,),
         ]),
     Category(
         title: 'cake',
         id: 9,
         image: 'assets/images/cake.jpg',
         productModels: [
-          ProductModel(title: 'Chocolate Cake',itemPrice: 10,image:),
-          ProductModel(title: 'Fruit Cake',itemPrice: 10,image:),
-          ProductModel(title:'Pineapple Cake',itemPrice: 10,image:),
+          ProductModel(title: 'Chocolate Cake',itemPrice: 10,),
+          ProductModel(title: 'Fruit Cake',itemPrice: 10,),
+          ProductModel(title:'Pineapple Cake',itemPrice: 10,),
         ]),
     Category(
         title: 'Soft Drink',
         id: 10,
         image: 'assets/images/coke.jpg',
         productModels: [
-          ProductModel(title: 'Coca Cola' ,itemPrice: 10,image:),
-          ProductModel(title: 'Milk Shake',itemPrice: 10,image:),
-          ProductModel(title: 'Coffee',itemPrice: 10,image:),
+          ProductModel(title: 'Coca Cola' ,itemPrice: 10,),
+          ProductModel(title: 'Milk Shake',itemPrice: 10,),
+          ProductModel(title: 'Coffee',itemPrice: 10,),
         ]),
   ];
   static final offers = [
     Offers(
-      image: 'images/assets/offer1.jpg',
+      image: 'assets/images/offer1.jpg',
     ),
     Offers(
-      image: 'images/assets/offer2.jpg',
+      image: 'assets/images/offer2.jpg',
     ),
   ];
   static final popularDeals = [

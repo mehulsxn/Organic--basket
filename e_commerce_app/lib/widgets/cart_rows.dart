@@ -22,8 +22,7 @@ class CartRows extends StatelessWidget {
             color: Colors.white,
             height: mq.height * 0.15,
             width: mq.width * 0.25,
-            child: Image.asset(
-                productModel.image),
+            child: Image.asset(productModel.image),
           ),
         ),
         SizedBox(
@@ -56,9 +55,11 @@ class CartRows extends StatelessWidget {
           ],
         ),
         Spacer(),
-        IconButton(onPressed: () {
-          RemoveProduct(productModel);
-        }, icon: Icon(Icons.delete)),
+        IconButton(
+            onPressed: () {
+              AddProduct(productModel);
+            },
+            icon: Icon(Icons.add)),
         // Column(
         //   children: [
         //     SizedBox(

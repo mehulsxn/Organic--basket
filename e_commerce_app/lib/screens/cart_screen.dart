@@ -48,8 +48,16 @@ class CartScreen extends StatelessWidget {
                       ? Text('No items added')
                       : ListView.builder(
                           itemCount: store.cart.allProductsInCart.length,
-                          itemBuilder: (ctx, index) => CartRows(
-                            productModel: store.cart.allProductsInCart[index],
+                          itemBuilder: (ctx, index) => Dismissible(
+                            key: UniqueKey(),
+                            direction: DismissDirection.endToStart,
+                            onDismissed: (direction) {
+                              RemoveProduct(
+                                  store.cart.allProductsInCart[index]);
+                            },
+                            child: CartRows(
+                              productModel: store.cart.allProductsInCart[index],
+                            ),
                           ),
                         ),
                 ),
