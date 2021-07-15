@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: false,
         title: Padding(
           padding: const EdgeInsets.only(left: 10.0),
-          child: Text('Hey\nLet\'s search your organic food'),
+          child: Text('Hey\nLet\'s search your organic food...'),
         ),
         actions: [
           // Container(

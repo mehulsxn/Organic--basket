@@ -91,73 +91,77 @@ class Data {
         id: 5,
         image: 'assets/images/bakery.jpg',
         productModels: [
-          ProductModel(title: 'Cookies',itemPrice: 10,),
-          ProductModel(title: 'Pastries',itemPrice: 10,),
-          ProductModel(title: 'Chocolates',itemPrice: 10, ),
+          ProductModel(title: 'Cookies',itemPrice: 10,image: 'assets/images/cookie.jpg'),
+          ProductModel(title: 'Pastries',itemPrice: 10,image: 'assets/images/pastry.png'),
+          ProductModel(title: 'Chocolates',itemPrice: 10,image: 'assets/images/choc.png'),
+          ProductModel(title: 'Muffins',itemPrice: 10,image: 'assets/images/muffin.png')
         ]),
     Category(
-        title: 'milk & eggs',
+        title: 'Milk & Eggs',
         id: 6,
         image: 'assets/images/milkeggs.jpg',
         productModels: [
-          ProductModel(title: 'Toned Milk',itemPrice: 10, ),
-          ProductModel(title: 'Eggs',itemPrice: 10, ),
-          ProductModel(title: 'Butter Milk',itemPrice: 10, ),
+          ProductModel(title: 'Toned Milk',itemPrice: 10, image:'assets/images/toned.png' ),
+          ProductModel(title: 'Butter Milk',itemPrice: 10, image:'assets/images/buttermilk.png' ),
+          ProductModel(title: 'Eggs',itemPrice: 10, image: 'assets/images/eggs1.png'),
         ]),
     Category(
-        title: 'meat',
+        title: 'Meat',
         id: 7,
         image: 'assets/images/meat.jpg',
         productModels: [
-          ProductModel(title: 'Red Meat',itemPrice: 10),
-          ProductModel(title: 'Chicken',itemPrice: 10),
-          ProductModel(title: 'Boneless Chicken',itemPrice: 10 ),
+          ProductModel(title: 'Red Meat',itemPrice: 10,image:'assets/images/redmeat.jpg' ),
+          ProductModel(title: 'Chicken',itemPrice: 10,image:'assets/images/chicken.png' ),
+          ProductModel(title: 'Boneless Chicken',itemPrice: 10,image: 'assets/images/boneless.png' ),
         ]),
     Category(
-        title: 'sea food',
+        title: 'Sea food',
         id: 8,
         image: 'assets/images/seafood.jpg',
         productModels: [
-          ProductModel(title: 'fish',itemPrice: 10,),
-          ProductModel(title: 'lobster',itemPrice: 10,),
-          ProductModel(title: 'crabs',itemPrice: 10,),
+          ProductModel(title: 'fish',itemPrice: 10,image: 'assets/images/fish.png'),
+          ProductModel(title: 'lobster',itemPrice: 10,image: 'assets/images/lobster.png'),
+          ProductModel(title: 'crabs',itemPrice: 10,image: 'assets/images/crab.jpg'),
         ]),
     Category(
-        title: 'cake',
+        title: 'Cake',
         id: 9,
         image: 'assets/images/cake.jpg',
         productModels: [
-          ProductModel(title: 'Chocolate Cake',itemPrice: 10,),
-          ProductModel(title: 'Fruit Cake',itemPrice: 10,),
-          ProductModel(title:'Pineapple Cake',itemPrice: 10,),
+          ProductModel(title: 'Chocolate Cake',itemPrice: 10,image: 'assets/images/choccake.png'),
+          ProductModel(title: 'Fruit Cake',itemPrice: 10,image:'assets/images/fruitcake.png' ),
+          ProductModel(title:'Pineapple Cake',itemPrice: 10,image: 'assets/images/pine.png'),
         ]),
     Category(
         title: 'Soft Drink',
         id: 10,
         image: 'assets/images/coke.jpg',
         productModels: [
-          ProductModel(title: 'Coca Cola' ,itemPrice: 10,),
-          ProductModel(title: 'Milk Shake',itemPrice: 10,),
-          ProductModel(title: 'Coffee',itemPrice: 10,),
+          ProductModel(title: 'Coca Cola' ,itemPrice: 10,image: 'assets/images/coca.png'),
+          ProductModel(title: 'Milk Shake',itemPrice: 10,image: 'assets/images/milkshake.png'),
+          ProductModel(title: 'Coffee',itemPrice: 10,image: 'assets/images/coffee.png'),
         ]),
   ];
   static final offers = [
     Offers(
-      image: 'assets/images/offer1.jpg',
+      image: 'assets/images/offer4.jpg',
     ),
     Offers(
       image: 'assets/images/offer2.jpg',
     ),
+    Offers(
+      image: 'assets/images/offer33.jpg',
+    ),
   ];
   static final popularDeals = [
     Popular(
-      image: 'assets/images/popular1.jpg',
-    ),
-    Popular(
-      image: 'assets/images/popular2.jpeg',
+      image: 'assets/images/pop1.png',
     ),
     Popular(
       image: 'assets/images/popular3.jpg',
+    ),
+    Popular(
+      image:'assets/images/pop2.png' ,
     ),
     Popular(
       image: 'assets/images/fruitcake.jpg',

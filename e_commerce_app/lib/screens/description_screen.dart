@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionScreen extends StatelessWidget {
-
   final ProductModel productModel;
 
   DescriptionScreen({this.productModel});
@@ -27,9 +26,9 @@ class DescriptionScreen extends StatelessWidget {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                 ),
-                child: Image.asset(productModel.image,
-
-                  fit: BoxFit.fitWidth,
+                child: Image.asset(
+                  productModel.image,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -37,7 +36,7 @@ class DescriptionScreen extends StatelessWidget {
               height: mq.height * 0.02,
             ),
             Container(
-              height: mq.height * 0.2,
+              height: mq.height * 0.15,
               width: mq.width * 0.95,
               decoration: BoxDecoration(
                 //color: Colors.red,
@@ -70,37 +69,6 @@ class DescriptionScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     height: mq.height * 0.04,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 30,
-                        width: 30,
-                        child: Icon(CupertinoIcons.minus),
-                        decoration: BoxDecoration(
-                            color: KPrimaryColor,
-                            borderRadius: BorderRadius.circular(5)),
-                      ),
-                      SizedBox(
-                        width: mq.width * 0.1,
-                      ),
-                      Text(
-                        '1 Kg',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: mq.width * 0.1,
-                      ),
-                      Container(
-                        height: 30,
-                        width: 30,
-                        child: Icon(CupertinoIcons.add),
-                        decoration: BoxDecoration(
-                            color: KPrimaryColor,
-                            borderRadius: BorderRadius.circular(5)),
-                      ),
-                    ],
                   ),
                 ],
               ),
@@ -136,9 +104,10 @@ class DescriptionScreen extends StatelessWidget {
               width: mq.width * 0.95,
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: 8,
+                itemCount: 4,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (ctx, index) => Container(
+                  child: Image.asset(productModel.image,fit: BoxFit.cover,),
                   margin: EdgeInsets.only(right: 15, top: 15),
                   height: mq.height * 0.09,
                   width: mq.width * 0.35,
