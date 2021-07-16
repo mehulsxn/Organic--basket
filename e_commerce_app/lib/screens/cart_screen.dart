@@ -7,6 +7,7 @@ import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CartScreen extends StatelessWidget {
@@ -73,6 +74,16 @@ class CartScreen extends StatelessWidget {
                           itemCount: list.length,
                           itemBuilder: (ctx, index) => Dismissible(
                             key: UniqueKey(),
+                            background: Container(color: Colors.redAccent,),
+                            secondaryBackground: Container(
+                              child: Center(
+                                child: Text(
+                                  'Delete',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              color: Colors.red,
+                            ),
                             direction: DismissDirection.endToStart,
                             onDismissed: (direction) {
                               FirebaseFirestore.instance
