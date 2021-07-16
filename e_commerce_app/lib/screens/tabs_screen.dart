@@ -34,7 +34,7 @@ class _TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseMethods.getDataFromFirebase(uid);
+    //FirebaseMethods.getDataFromFirebase(uid);
     return Scaffold(
       body: screens[pageIndex],
       bottomNavigationBar: BottomNavigationBar(

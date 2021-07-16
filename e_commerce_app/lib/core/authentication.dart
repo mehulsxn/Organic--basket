@@ -8,6 +8,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final auth = FirebaseAuth.instance;
+final GoogleSignIn googleSignIn = GoogleSignIn();
 
 class Authentication {
   static Future<void> signUp(
@@ -88,6 +89,47 @@ class Authentication {
     await auth.signOut();
   }
 
-  //static void signInwithGoogle()async{
- // }
+  static void signInWithGoogle(BuildContext context) async {
+    try {
+      final GoogleSignInAccount googleSignInAccount =
+      await googleSignIn.signIn();
+
+      final GoogleSignInAuthentication googleSignInAuthentication =
+      await googleSignInAccount.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleSignInAuthentication.accessToken,
+        idToken: googleSignInAuthentication.idToken,
+      );
+
+      final UserCredential authResult =
+      await auth.signInWithCredential(credential);
+
+      final User user = authResult.user;
+
+      if (user != null) {
+        FirebaseMethods.saveUserToFirebase(
+            uid: user.uid, name: user.displayName, email: user.email);
+
+        Navigator.of(context)
+            .pushReplacement(MaterialPageRoute(builder: (ctx) => TabScreen()));
+      }
+    } catch (error) {
+      print(error);
+      Fluttertoast.showToast(
+        msg: error.toString(),
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
+    }
+  }
+
+  static void signOutGoogle() async {
+    await googleSignIn.signOut();
+    await auth.signOut();
+  }
 }

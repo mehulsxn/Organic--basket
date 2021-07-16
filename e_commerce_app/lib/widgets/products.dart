@@ -4,12 +4,14 @@ import 'package:e_commerce_app/data/data.dart';
 import 'package:e_commerce_app/models/product_model.dart';
 import 'package:e_commerce_app/screens/description_screen.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Products extends StatelessWidget {
   final ProductModel productModel;
-
+  final String uid = FirebaseAuth.instance.currentUser.uid;
   Products({this.productModel});
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,7 @@ productModel: productModel,
                   ),
                   GestureDetector(
                     onTap: () {
-                      AddProduct(productModel);
+                      AddProduct(productModel,uid);
                     },
                     child: Container(
                       height: 50,

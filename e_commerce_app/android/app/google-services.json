@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1090529231022",
-    "project_id": "organic-basket-fe826",
-    "storage_bucket": "organic-basket-fe826.appspot.com"
+    "project_number": "961146237690",
+    "project_id": "ecommerce-2cfa2",
+    "storage_bucket": "ecommerce-2cfa2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1090529231022:android:e49e69e8e72aa8db036d3f",
+        "mobilesdk_app_id": "1:961146237690:android:fb2fa4f03fb5db76cc4f43",
         "android_client_info": {
           "package_name": "com.mehul.e_commerce_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1090529231022-a8bovlpk3o5kmq3irnu584p4vi1lorlk.apps.googleusercontent.com",
+          "client_id": "961146237690-6plj71nkk8h10kg4q6nio930p2vbhmbf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAimHfSphJ0wCX9sa0SD7McbhEz5nxEy28"
+          "current_key": "AIzaSyCgkOKyfRtbReob73kjZ15Z5XCipgtni3M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1090529231022-a8bovlpk3o5kmq3irnu584p4vi1lorlk.apps.googleusercontent.com",
+              "client_id": "961146237690-6plj71nkk8h10kg4q6nio930p2vbhmbf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

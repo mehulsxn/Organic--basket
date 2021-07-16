@@ -1,7 +1,11 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/core/authentication.dart';
 import 'package:e_commerce_app/screens/welcome_screen.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -26,85 +30,111 @@ class _AccountScreenState extends State<AccountScreen> {
       },
     );
   }
+  final String uid= FirebaseAuth.instance.currentUser.uid;
+
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        color: KPrimaryColor.withOpacity(0.8),
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 55,
-              ),
-              Stack(children: [
+      child: StreamBuilder(stream: FirebaseFirestore.instance.collection('Users').doc(uid).snapshots(),builder: (ctx,snapshot){
+
+        var data = snapshot.data;
+
+
+
+        return Container(
+          color: KPrimaryColor,
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 55,
+                ),
                 Container(
                   height: 100,
                   width: 120,
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.black, width: 2),
-                  ),
-                  child: _image == null
-                      ? Text(
+                  child: Stack(children: [
+                    Container(
+                      height: 100,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.black, width: 2),
+                      ),
+                      child: Center(
+                        child: _image == null
+                            ? Text(
                           'No image ',
-                          textAlign: TextAlign.end,
+
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
-                      : Image.file(_image),
+                            : Image.file(_image),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 7,
+                      right: 0,
+                      child: Container(
+
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.black12,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: IconButton(
+
+                            icon: Icon(
+                              Icons.camera_alt,
+                              color: Colors.white,
+                            ),
+                            onPressed: () => _getImage(),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Container(
-                  height: 40,
-                  width: 40,
-                  child: Center(
-                    child: ElevatedButton(
-                      child: Icon(
-                        Icons.camera_alt,
-                        color: Colors.black,
-                      ),
-                      onPressed: () => _getImage(),
-                    ),
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10),
+                  height: 560,
+                  width: double.infinity,
+                  //color: Colors.grey,
+                  child: Column(
+                    children: [
+                      BuildFormField('Name',data['name']),
+                      SizedBox(height: 15),
+                      BuildFormField('Email',data['name']),
+                      SizedBox(height: 15),
+                      BuildFormField('Password',data['name']),
+                      SizedBox(height: 15),
+                      BuildFormField('Phone No',data['name']),
+                      SizedBox(height: 15),
+                      BuildFormField('Address',data['name']),
+                      SizedBox(height: 15),
+                      BuildEditButton(),
+                      SizedBox(height: 15),
+                      BuildLogoutButton(),
+                    ],
                   ),
                 ),
-              ]),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.all(10),
-                height: 560,
-                width: double.infinity,
-                //color: Colors.grey,
-                child: Column(
-                  children: [
-                    BuildFormField('Name'),
-                    SizedBox(height: 15),
-                    BuildFormField('Email'),
-                    SizedBox(height: 15),
-                    BuildFormField('Password'),
-                    SizedBox(height: 15),
-                    BuildFormField('Phone No'),
-                    SizedBox(height: 15),
-                    BuildFormField('Address'),
-                    SizedBox(height: 15),
-                    BuildEditButton(),
-                    SizedBox(height: 15),
-                    BuildLogoutButton(),
-                  ],
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ),
+        );
+      },)
     );
   }
 
-  Widget BuildFormField(String text) {
+  Widget BuildFormField(String text,String value) {
     return TextFormField(
+      initialValue: value,
       decoration: InputDecoration(
         hintText: text,
         border: OutlineInputBorder(
@@ -116,6 +146,7 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Widget BuildEditButton() {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: Colors.black,shape: RoundedRectangleBorder( borderRadius: new BorderRadius.circular(30.0),)),
       onPressed: () {},
       child: Text(
         '               SAVE               ',
@@ -128,8 +159,9 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Widget BuildLogoutButton() {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: Colors.blueGrey,shape: RoundedRectangleBorder( borderRadius: new BorderRadius.circular(30.0),)),
       child: Text(
-        '             Signout             ',
+        'Signout',
         style: TextStyle(
           fontSize: 20,
         ),

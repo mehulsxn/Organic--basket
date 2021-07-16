@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/firebase_methods.dart';
 import 'package:e_commerce_app/core/store.dart';
 import 'package:e_commerce_app/models/product_model.dart';
 import 'package:flutter/material.dart';
@@ -12,11 +13,14 @@ class Cart {
 class AddProduct extends VxMutation<MyStore> {
   final ProductModel product;
 
-  AddProduct(this.product);
+  final String uid;
+
+  AddProduct(this.product,this.uid);
 
   @override
   perform() {
     store.cart.allProductsInCart.add(product);
+    FirebaseMethods.addProductToCartOnFirebase(uid,product);
     int sum=0;
     store.cart.allProductsInCart.forEach((element) {
       sum = sum + element.itemPrice;

@@ -2,12 +2,13 @@ import 'package:e_commerce_app/core/cart.dart';
 import 'package:e_commerce_app/core/store.dart';
 import 'package:e_commerce_app/models/product_model.dart';
 import 'package:e_commerce_app/widgets/constant.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartRows extends StatelessWidget {
   final ProductModel productModel;
-
+  final String uid = FirebaseAuth.instance.currentUser.uid;
   CartRows({this.productModel});
 
   @override
@@ -22,7 +23,8 @@ class CartRows extends StatelessWidget {
             color: Colors.white,
             height: mq.height * 0.15,
             width: mq.width * 0.25,
-            child: Image.asset(productModel.image),
+           child: Image.asset(productModel.image),
+            //child: Image.network('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg'),
           ),
         ),
         SizedBox(
@@ -57,7 +59,7 @@ class CartRows extends StatelessWidget {
         Spacer(),
         IconButton(
             onPressed: () {
-              AddProduct(productModel);
+              AddProduct(productModel,uid);
             },
             icon: Icon(Icons.add)),
         // Column(

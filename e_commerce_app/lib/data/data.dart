@@ -12,11 +12,11 @@ class Data {
         image: 'assets/images/vegetable.jpg',
         productModels: [
           ProductModel(
-              title: 'Onion', itemPrice: 10, image: 'assets/images/onion.jpg'),
+              title: 'Onion', itemPrice: 10, image: 'assets/images/onion.jpg',description:'An onion is a round vegetable with a brown skin that grows underground. It has many white layers on its inside which have a strong, sharp smell and taste.It is made with fresh minced meat, cooked with onion and a rich tomato sauce.' ),
           ProductModel(
               title: 'Potato',
               itemPrice: 10,
-              image: 'assets/images/potato.jpeg'),
+              image: 'assets/images/potato.jpeg',description: 'The potato is one of some 150 tuber-bearing species of the genus Solanum (a tuber is the swollen end of an underground stem). The compound leaves are spirally arranged; each leaf is 20–30 cm (about 8–12 inches) long and consists of a terminal leaflet and two to four pairs of leaflets.'),
           ProductModel(
               title: 'Cabbage',
               itemPrice: 10,
@@ -36,7 +36,7 @@ class Data {
         image: 'assets/images/fruits.jpg',
         productModels: [
           ProductModel(
-              title: 'Kiwi', itemPrice: 10, image: 'assets/images/kiwi.png'),
+              title: 'Kiwi', itemPrice: 10, image: 'assets/images/kiwi.png',description: 'The ellipsoidal kiwi fruit is a true berry and has furry brownish green skin. The firm translucent green flesh has numerous edible purple-black seeds embedded around a white centre. The deciduous leaves are borne alternately on long petioles (leaf stems), and young leaves are covered with reddish hairs.'),
           ProductModel(
               title: 'Orange',
               itemPrice: 10,
@@ -46,7 +46,7 @@ class Data {
           ProductModel(
               title: 'Pineapple',
               itemPrice: 10,
-              image: 'assets/images/pineapple.png'),
+              image: 'assets/images/pineapple.png',description: ' a juicy, edible tropical fruit somewhat resembling a pine cone: it consists of the fleshy inflorescence of a collective fruit developed from a spike of flowers. 2. the terrestrial plant (Ananas comosus) of the pineapple family on which it grows, having a short stem and spiny-edged, recurved leaves.'),
           ProductModel(
               title: 'Watermelon',
               itemPrice: 10,

@@ -74,51 +74,61 @@ class DescriptionScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: mq.height * 0.05,
+              height: mq.height * 0.03,
             ),
             Container(
               padding: EdgeInsets.all(5),
-              height: mq.height * 0.26,
+              height: mq.height * 0.36,
               width: mq.width * 0.95,
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: 2,
+                itemCount: 1,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (ctx, index) => Container(
-                  margin: EdgeInsets.only(right: 15),
-                  height: mq.height * 0.3,
-                  width: mq.width * 0.92,
-                  decoration: BoxDecoration(
-                      color: KPrimaryColor,
-                      borderRadius: BorderRadius.circular(25)),
+                itemBuilder: (ctx, index) => SingleChildScrollView(
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    child: Text(
+                      productModel.description,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    margin: EdgeInsets.only(right: 15),
+                    height: mq.height * 0.3,
+                    width: mq.width * 0.92,
+                    decoration: BoxDecoration(
+                        color: KPrimaryColor,
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
                 ),
               ),
             ),
             SizedBox(
-              height: mq.height * 0.05,
+              height: mq.height * 0.01,
             ),
-            Container(
-              color: Colors.white,
-              padding: EdgeInsets.all(5),
-              height: mq.height * 0.22,
-              width: mq.width * 0.95,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (ctx, index) => Container(
-                  child: Image.asset(productModel.image,fit: BoxFit.cover,),
-                  margin: EdgeInsets.only(right: 15, top: 15),
-                  height: mq.height * 0.09,
-                  width: mq.width * 0.35,
-                  decoration: BoxDecoration(
-                      color: KPrimaryColor.withOpacity(0.4),
-                      borderRadius: BorderRadius.circular(25)),
-                ),
-              ),
-            ),
+            // Container(
+            //   color: Colors.white,
+            //   padding: EdgeInsets.all(5),
+            //   height: mq.height * 0.22,
+            //   width: mq.width * 0.95,
+            //   child: ListView.builder(
+            //     shrinkWrap: true,
+            //     itemCount: 4,
+            //     scrollDirection: Axis.horizontal,
+            //     itemBuilder: (ctx, index) => Container(
+            //       child: Image.asset(
+            //         productModel.image,
+            //         fit: BoxFit.cover,
+            //       ),
+            //       margin: EdgeInsets.only(right: 15, top: 15),
+            //       height: mq.height * 0.09,
+            //       width: mq.width * 0.35,
+            //       decoration: BoxDecoration(
+            //           color: KPrimaryColor.withOpacity(0.4),
+            //           borderRadius: BorderRadius.circular(25)),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
-              height: mq.height * 0.05,
+              height: mq.height * 0.01,
             ),
             BottomNavigationBar(
               selectedItemColor: KPrimaryColor,
