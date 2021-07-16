@@ -12,7 +12,7 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 
 class Authentication {
   static Future<void> signUp(
-      {BuildContext context, String email, String password,String name}) async {
+      {BuildContext context, String email, String password,String name,String phoneno,String address}) async {
     try {
       ToggleLoading();
       Future.delayed(Duration(seconds: 1));
@@ -23,7 +23,7 @@ class Authentication {
 
       if (user != null) {
         ToggleLoading();
-        FirebaseMethods.saveUserToFirebase(uid: user.uid,name: name,email: email);
+        FirebaseMethods.saveUserToFirebase(uid: user.uid,name: name,email: email,phoneno: phoneno,address: address);
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (ctx) => TabScreen()));
       }

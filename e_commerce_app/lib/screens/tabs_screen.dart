@@ -18,7 +18,6 @@ class _TabScreenState extends State<TabScreen> {
   String uid = FirebaseAuth.instance.currentUser.uid;
   List<Widget> screens = [
     HomeScreen(),
-
     CartScreen(),
     AccountScreen(),
 

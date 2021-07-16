@@ -5,10 +5,12 @@ import 'package:flutter/cupertino.dart';
 final db = FirebaseFirestore.instance;
 
 class FirebaseMethods {
-  static void saveUserToFirebase({String uid, String name, String email}) {
+  static void saveUserToFirebase({String uid, String name, String email,String phoneno,String address}) {
     db.collection('Users').doc(uid).set({
       'name': name,
       'email': email,
+      'phoneno': phoneno,
+      'address': address,
     });
   }
 

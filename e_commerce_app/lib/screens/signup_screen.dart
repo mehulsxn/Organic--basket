@@ -17,12 +17,16 @@ class _SignupScreenState extends State<SignupScreen> {
 
   String _name;
 
+  String _phoneno;
+
+  String _address;
+
   _save() {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
 
       Authentication.signUp(
-          context: context, email: _email, password: _password, name: _name);
+          context: context, email: _email, password: _password, name: _name, phoneno: _phoneno,address: _address);
     }
   }
 
@@ -61,7 +65,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Column(
                   children: [
                     buildNameField(),
+                    buildPhonenoField(),
                     buildEmailfField(),
+                    buildaddressField(),
                     buildPasswordField('Password'),
                   ],
                 ),
@@ -87,6 +93,35 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
   }
+  Widget buildaddressField() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: TextFormField(
+        decoration: InputDecoration(
+          hintText: 'Address',
+          prefixIcon: Icon(
+            Icons.home,
+            color: Colors.grey,
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
+        ),
+        onSaved: (value) {
+          _address = value;
+        },
+        // ignore: missing_return
+        validator: (_value) {
+          if (_value.isEmpty) {
+            return 'Please enter Address';
+          }
+        },
+      ),
+    );
+  }
+
+
+
 
   Widget buildNameField() {
     return Container(
@@ -109,6 +144,32 @@ class _SignupScreenState extends State<SignupScreen> {
         validator: (_value) {
           if (_value.isEmpty) {
             return 'Please enter name';
+          }
+        },
+      ),
+    );
+  }
+  Widget buildPhonenoField() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: TextFormField(
+        decoration: InputDecoration(
+          hintText: 'Phone no',
+          prefixIcon: Icon(
+            Icons.phone,
+            color: Colors.grey,
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
+        ),
+        onSaved: (value) {
+          _phoneno = value;
+        },
+        // ignore: missing_return
+        validator: (_value) {
+          if (_value.isEmpty) {
+            return 'Please enter phone no';
           }
         },
       ),

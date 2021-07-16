@@ -30,20 +30,26 @@ class _AccountScreenState extends State<AccountScreen> {
       },
     );
   }
-  final String uid= FirebaseAuth.instance.currentUser.uid;
 
+  final String uid = FirebaseAuth.instance.currentUser.uid;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: StreamBuilder(stream: FirebaseFirestore.instance.collection('Users').doc(uid).snapshots(),builder: (ctx,snapshot){
-
+        child: StreamBuilder(
+      stream:
+          FirebaseFirestore.instance.collection('Users').doc(uid).snapshots(),
+      builder: (ctx, snapshot) {
         var data = snapshot.data;
 
-
-
         return Container(
-          color: KPrimaryColor,
+          //color: KPrimaryColor,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(begin: Alignment.topLeft,end: Alignment.bottomRight,colors: [
+              KPrimaryColor,
+              Colors.lightBlueAccent,
+            ],)
+          ),
           child: Center(
             child: Column(
               children: [
@@ -65,18 +71,19 @@ class _AccountScreenState extends State<AccountScreen> {
                       child: Center(
                         child: _image == null
                             ? Text(
-                          'No image ',
-
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )
-                            : Image.file(_image),
+                                'No image ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )
+                            : Image.file(
+                                _image,
+                                fit: BoxFit.cover,
+                              ),
                       ),
                     ),
                     Positioned(
                       bottom: 7,
                       right: 0,
                       child: Container(
-
                         height: 40,
                         width: 40,
                         decoration: BoxDecoration(
@@ -85,7 +92,6 @@ class _AccountScreenState extends State<AccountScreen> {
                         ),
                         child: Center(
                           child: IconButton(
-
                             icon: Icon(
                               Icons.camera_alt,
                               color: Colors.white,
@@ -108,18 +114,17 @@ class _AccountScreenState extends State<AccountScreen> {
                   //color: Colors.grey,
                   child: Column(
                     children: [
-                      BuildFormField('Name',data['name']),
-                      SizedBox(height: 15),
-                      BuildFormField('Email',data['name']),
-                      SizedBox(height: 15),
-                      BuildFormField('Password',data['name']),
-                      SizedBox(height: 15),
-                      BuildFormField('Phone No',data['name']),
-                      SizedBox(height: 15),
-                      BuildFormField('Address',data['name']),
-                      SizedBox(height: 15),
+                      BuildFormField('Name', data['name']),
+                      SizedBox(height: 20),
+                      BuildFormField('Email', data['email']),
+
+                      SizedBox(height: 20),
+                      BuildFormField('Phone No', data['phoneno']),
+                      SizedBox(height: 20),
+                      BuildFormField('Address', data['address']),
+                      SizedBox(height: 20),
                       BuildEditButton(),
-                      SizedBox(height: 15),
+                      SizedBox(height: 20),
                       BuildLogoutButton(),
                     ],
                   ),
@@ -128,15 +133,17 @@ class _AccountScreenState extends State<AccountScreen> {
             ),
           ),
         );
-      },)
-    );
+      },
+    ));
   }
 
-  Widget BuildFormField(String text,String value) {
+  Widget BuildFormField(String text, String value) {
     return TextFormField(
+      style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,fontStyle: FontStyle.italic),
       initialValue: value,
       decoration: InputDecoration(
         hintText: text,
+
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
@@ -146,7 +153,11 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Widget BuildEditButton() {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Colors.black,shape: RoundedRectangleBorder( borderRadius: new BorderRadius.circular(30.0),)),
+      style: ElevatedButton.styleFrom(
+          primary: Colors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(30.0),
+          )),
       onPressed: () {},
       child: Text(
         '               SAVE               ',
@@ -159,7 +170,11 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Widget BuildLogoutButton() {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Colors.blueGrey,shape: RoundedRectangleBorder( borderRadius: new BorderRadius.circular(30.0),)),
+      style: ElevatedButton.styleFrom(
+          primary: Colors.blueGrey,
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(30.0),
+          )),
       child: Text(
         'Signout',
         style: TextStyle(

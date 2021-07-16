@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
       width: mq.width * 0.8,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: KPrimaryColor,
+          primary: Colors.black,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         ),

@@ -135,9 +135,11 @@ class DescriptionScreen extends StatelessWidget {
               unselectedItemColor: Colors.white,
               items: [
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.attach_money_sharp), label: '\$17.00'),
+                    icon: Icon(Icons.attach_money_sharp,size: 25.0,), label: '\$17.00'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.shopping_cart), label: 'Add to Cart'),
+                    icon: Icon(Icons.shopping_cart,color: KPrimaryColor,size: 30.0,), label: 'Add to Cart'),
+
+
               ],
             ),
           ],
