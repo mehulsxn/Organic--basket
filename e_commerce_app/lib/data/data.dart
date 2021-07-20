@@ -141,6 +141,7 @@ class Data {
           ProductModel(title: 'Milk Shake',itemPrice: 10,image: 'assets/images/milkshake.png'),
           ProductModel(title: 'Coffee',itemPrice: 10,image: 'assets/images/coffee.png'),
         ]),
+
   ];
   static final offers = [
     Offers(

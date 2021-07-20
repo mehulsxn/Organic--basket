@@ -47,7 +47,7 @@ class _AccountScreenState extends State<AccountScreen> {
           decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topLeft,end: Alignment.bottomRight,colors: [
               KPrimaryColor,
-              Colors.lightBlueAccent,
+              Colors.white,
             ],)
           ),
           child: Center(

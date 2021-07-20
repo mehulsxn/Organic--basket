@@ -76,11 +76,14 @@ class DescriptionScreen extends StatelessWidget {
             SizedBox(
               height: mq.height * 0.03,
             ),
+
             Container(
+
               padding: EdgeInsets.all(5),
               height: mq.height * 0.36,
               width: mq.width * 0.95,
               child: ListView.builder(
+
                 shrinkWrap: true,
                 itemCount: 1,
                 scrollDirection: Axis.horizontal,
@@ -104,6 +107,7 @@ class DescriptionScreen extends StatelessWidget {
             SizedBox(
               height: mq.height * 0.01,
             ),
+
             // Container(
             //   color: Colors.white,
             //   padding: EdgeInsets.all(5),
@@ -147,4 +151,6 @@ class DescriptionScreen extends StatelessWidget {
       ),
     );
   }
+
 }
+

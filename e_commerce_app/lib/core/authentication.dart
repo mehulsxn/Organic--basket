@@ -81,7 +81,15 @@ class Authentication {
       } else if (error.toString().contains('A network error')) {
         errorMessage = 'Network error';
       }
-      ;
+      Fluttertoast.showToast(
+          msg: errorMessage,
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.redAccent,
+          textColor: Colors.white,
+          fontSize: 16.0);
+
     }
   }
 

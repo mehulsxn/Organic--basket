@@ -182,7 +182,9 @@ class CartScreen extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(primary: KPrimaryColor),
-                        onPressed: () {},
+                        onPressed: () {
+
+                        },
                         child: Text(
                           'Checkout >',
                           style: TextStyle(fontSize: 18),
