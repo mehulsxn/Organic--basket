@@ -3,7 +3,6 @@ import 'package:e_commerce_app/screens/account_screen.dart';
 import 'package:e_commerce_app/screens/cart_screen.dart';
 import 'package:e_commerce_app/screens/home_screen.dart';
 
-
 import 'package:e_commerce_app/widgets/constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +13,11 @@ class TabScreen extends StatefulWidget {
 }
 
 class _TabScreenState extends State<TabScreen> {
-
-  String uid = FirebaseAuth.instance.currentUser.uid;
+  //String uid = FirebaseAuth.instance.currentUser.uid;
   List<Widget> screens = [
     HomeScreen(),
     CartScreen(),
     AccountScreen(),
-
   ];
 
   int pageIndex = 0;
@@ -47,7 +44,6 @@ class _TabScreenState extends State<TabScreen> {
                   ? Icon(Icons.category, size: 30)
                   : Icon(Icons.category_outlined, size: 30),
               label: 'Home'),
-
           BottomNavigationBarItem(
               icon: pageIndex == 1
                   ? Icon(Icons.shopping_cart, size: 30)

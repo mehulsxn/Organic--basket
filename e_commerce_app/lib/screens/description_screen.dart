@@ -78,12 +78,10 @@ class DescriptionScreen extends StatelessWidget {
             ),
 
             Container(
-
               padding: EdgeInsets.all(5),
               height: mq.height * 0.36,
               width: mq.width * 0.95,
               child: ListView.builder(
-
                 shrinkWrap: true,
                 itemCount: 1,
                 scrollDirection: Axis.horizontal,
@@ -139,11 +137,18 @@ class DescriptionScreen extends StatelessWidget {
               unselectedItemColor: Colors.white,
               items: [
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.attach_money_sharp,size: 25.0,), label: '\$17.00'),
+                    icon: Icon(
+                      Icons.attach_money_sharp,
+                      size: 25.0,
+                    ),
+                    label: '\$17.00'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.shopping_cart,color: KPrimaryColor,size: 30.0,), label: 'Add to Cart'),
-
-
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      color: KPrimaryColor,
+                      size: 30.0,
+                    ),
+                    label: 'Add to Cart'),
               ],
             ),
           ],
@@ -151,6 +156,4 @@ class DescriptionScreen extends StatelessWidget {
       ),
     );
   }
-
 }
-

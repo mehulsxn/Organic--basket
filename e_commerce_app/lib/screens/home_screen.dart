@@ -19,9 +19,7 @@ class HomeScreen extends StatelessWidget {
           child: Text('Hey\nLet\'s search your organic food...'),
         ),
         actions: [
-          // Container(
-          //   child: Image.network('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-512.png'),
-          // ),
+
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: CircleAvatar(
